@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite errors="0" failures="3" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="15" time="237.067">
+<testcase classname="F01_Register | users could register with new accounts" name="guest user could register with valid data successfully" time="56.419">
+<system-out><![CDATA[Given user go to register page..............................................passed
+When user select gender type................................................passed
+And user enter first name "automation" and last name "tester"...............passed
+And user enter date of birth................................................passed
+And user enter email "test@example.com" field...............................passed
+And user fills Password fields "P@ssw0rd" "P@ssw0rd"........................passed
+And user clicks on register button..........................................passed
+Then success message is displayed...........................................passed
+]]></system-out>
+</testcase>
+<testcase classname="F02_Login | users could use login functionality to use their accounts" name="user could login with valid email and password" time="15.772">
+<system-out><![CDATA[Given user go to login page.................................................passed
+When user login with "valid" "test@example.com" and "P@ssw0rd"..............passed
+And user press on login button..............................................passed
+Then user login to the system successfully..................................passed
+]]></system-out>
+</testcase>
+<testcase classname="F02_Login | users could use login functionality to use their accounts" name="user could login with invalid email and password" time="15.893">
+<system-out><![CDATA[Given user go to login page.................................................passed
+When user login with "invalid" "test@example.com" and "P@ssw0rd"............passed
+And user press on login button..............................................passed
+Then user could not login to the system.....................................passed
+]]></system-out>
+</testcase>
+<testcase classname="F03_Currency | users could change currency" name="user could switch between currencies in homepage" time="13.078">
+<system-out><![CDATA[Given user go to home page..................................................passed
+And user select Euro from currency dropdown menu............................passed
+Then products prices should be displayed in Euro............................passed
+]]></system-out>
+</testcase>
+<testcase classname="F04_Search | user could search for any product" name="user could search using product name" time="8.976">
+<system-out><![CDATA[And user clicks on search field.............................................passed
+And user enters "Apple MacBook" in the search text field....................passed
+Then user could find relative results.......................................passed
+]]></system-out>
+</testcase>
+<testcase classname="F04_Search | user could search for any product" name="user could search for product using sku" time="10.806">
+<system-out><![CDATA[And user clicks on search field.............................................passed
+And user enters "AP_MBP_13" in the search text field........................passed
+Then user could find relative results.......................................passed
+]]></system-out>
+</testcase>
+<testcase classname="F05_Hover | user could hover and select categories" name="user can hover and select categories in homepage" time="10.306">
+<system-out><![CDATA[When user hovers over the categories and select a category or sub-category..passed
+And user clicks on category or sub-category.................................passed
+Then user directed to the selected category page............................passed
+]]></system-out>
+</testcase>
+<testcase classname="F06_HomeSlider | user can open the sliders pages" name="first slider &quot;Nokia&quot; is clickable" time="8.632">
+<failure message="The following asserts failed:&#10;&#9;expected [https://demo.nopcommerce.com/nokia-lumia-1020] but found [https://demo.nopcommerce.com/]" type="java.lang.AssertionError"><![CDATA[When user clicks on the first slider........................................passed
+Then user browser is navigated to first slider product page.................failed
+
+StackTrace:
+java.lang.AssertionError: The following asserts failed:
+	expected [https://demo.nopcommerce.com/nokia-lumia-1020] but found [https://demo.nopcommerce.com/]
+	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:46)
+	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:30)
+	at org.example.stepDefs.D06_homeSlidersStepDef.userDirectedToUrl(D06_homeSlidersStepDef.java:49)
+	at ✽.user browser is navigated to first slider product page(file:///C:/Users/htc/IdeaProjects/demonopcommerce/src/main/resources/features/F06_homeSliders.feature:5)
+]]></failure>
+</testcase>
+<testcase classname="F06_HomeSlider | user can open the sliders pages" name="second slider &quot;iPhone&quot; is clickable" time="8.179">
+<failure message="element click intercepted: Element &lt;a href=&quot;http://demo.nopcommerce.com/&quot; aria-label=&quot;&quot; class=&quot;nivo-imageLink&quot; style=&quot;display: none;&quot;&gt;...&lt;/a&gt; is not clickable at point (674, 418). Other element would receive the click: &lt;a href=&quot;http://demo.nopcommerce.com/&quot; aria-label=&quot;&quot; class=&quot;nivo-imageLink&quot; style=&quot;display: block;&quot;&gt;...&lt;/a&gt;&#10;  (Session info: chrome=103.0.5060.114)&#10;Build info: version: '4.3.0', revision: 'a4995e2c09*'&#10;System info: host: 'SAMAR-SAMEH', ip: '192.168.1.11', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_333'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Command: [6b30a66c500fd0dbff34783d5f3eef67, clickElement {id=31346708-44ff-4fe9-b84c-890a78c3272a}]&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 103.0.5060.114, chrome: {chromedriverVersion: 103.0.5060.53 (a1711811edd7..., userDataDir: C:\Users\htc\AppData\Local\...}, goog:chromeOptions: {debuggerAddress: localhost:50042}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:50042/devtoo..., se:cdpVersion: 103.0.5060.114, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}&#10;Element: [[ChromeDriver: chrome on WINDOWS (6b30a66c500fd0dbff34783d5f3eef67)] -&gt; xpath:  //a[@style=&quot;display: block;&quot;]]&#10;Session ID: 6b30a66c500fd0dbff34783d5f3eef67" type="org.openqa.selenium.ElementClickInterceptedException"><![CDATA[When user clicks on the second slider.......................................failed
+Then user browser is navigated to second slider product page................skipped
+
+StackTrace:
+org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <a href="http://demo.nopcommerce.com/" aria-label="" class="nivo-imageLink" style="display: none;">...</a> is not clickable at point (674, 418). Other element would receive the click: <a href="http://demo.nopcommerce.com/" aria-label="" class="nivo-imageLink" style="display: block;">...</a>
+  (Session info: chrome=103.0.5060.114)
+Build info: version: '4.3.0', revision: 'a4995e2c09*'
+System info: host: 'SAMAR-SAMEH', ip: '192.168.1.11', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_333'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [6b30a66c500fd0dbff34783d5f3eef67, clickElement {id=31346708-44ff-4fe9-b84c-890a78c3272a}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 103.0.5060.114, chrome: {chromedriverVersion: 103.0.5060.53 (a1711811edd7..., userDataDir: C:\Users\htc\AppData\Local\...}, goog:chromeOptions: {debuggerAddress: localhost:50042}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:50042/devtoo..., se:cdpVersion: 103.0.5060.114, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on WINDOWS (6b30a66c500fd0dbff34783d5f3eef67)] -> xpath:  //a[@style="display: block;"]]
+Session ID: 6b30a66c500fd0dbff34783d5f3eef67
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:569)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:257)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:78)
+	at org.example.stepDefs.D06_homeSlidersStepDef.userClickOnSecondSlider(D06_homeSlidersStepDef.java:34)
+	at ✽.user clicks on the second slider(file:///C:/Users/htc/IdeaProjects/demonopcommerce/src/main/resources/features/F06_homeSliders.feature:8)
+]]></failure>
+</testcase>
+<testcase classname="F07_FollowUs | user can open followUs links" name="user opens Facebook link" time="20.253">
+<system-out><![CDATA[When user opens Facebook link...............................................passed
+Then "https://www.facebook.com/nopCommerce" is opened in new tab............passed
+]]></system-out>
+</testcase>
+<testcase classname="F07_FollowUs | user can open followUs links" name="user opens Twitter link" time="20.159">
+<system-out><![CDATA[When user opens Twitter link................................................passed
+Then "https://twitter.com/nopCommerce" is opened in new tab.................passed
+]]></system-out>
+</testcase>
+<testcase classname="F07_FollowUs | user can open followUs links" name="user opens rss link" time="11.878">
+<failure message="Index: 1, Size: 1" type="java.lang.IndexOutOfBoundsException"><![CDATA[When user opens rss link....................................................passed
+Then "https://demo.nopcommerce.com/new-online-store-is-open" is opened in new tab.failed
+
+StackTrace:
+java.lang.IndexOutOfBoundsException: Index: 1, Size: 1
+	at java.util.ArrayList.rangeCheck(ArrayList.java:659)
+	at java.util.ArrayList.get(ArrayList.java:435)
+	at org.example.stepDefs.D07_followUsStepDef.navigateToLink(D07_followUsStepDef.java:47)
+	at ✽."https://demo.nopcommerce.com/new-online-store-is-open" is opened in new tab(file:///C:/Users/htc/IdeaProjects/demonopcommerce/src/main/resources/features/F07_followUs.feature:13)
+]]></failure>
+</testcase>
+<testcase classname="F07_FollowUs | user can open followUs links" name="user opens YouTube link" time="19.97">
+<system-out><![CDATA[When user opens YouTube link................................................passed
+Then "https://www.youtube.com/user/nopCommerce" is opened in new tab........passed
+]]></system-out>
+</testcase>
+<testcase classname="F08_Wishlist | user can add a product to wishlist" name="user add an item to wishlist and a success message is displayed" time="8.086">
+<system-out><![CDATA[When user adds an item to wishlist..........................................passed
+Then success message of wishlist is displayed...............................passed
+]]></system-out>
+</testcase>
+<testcase classname="F08_Wishlist | user can add a product to wishlist" name="number of wishlist in home page is increased" time="7.853">
+<system-out><![CDATA[When user adds an item to wishlist..........................................passed
+Then success message of wishlist is displayed...............................passed
+And number of wishlist is increased.........................................passed
+]]></system-out>
+</testcase>
+</testsuite>
